@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<response version="1.9">
+	<code>1</code>
+	<message>Success</message>
+	<user_list retro="cool">
+		<mailbox status="active" modtime="20150528222906Z">bstrunk@domain.com</mailbox>
+		<mailbox status="active" modtime="20150818150143Z">sstauss@domain.com</mailbox>
+		<mailbox status="active" modtime="20151026164155Z">shenkes@domain.com</mailbox>
+		<mailbox status="active" modtime="20150818172450Z" nugent="awesome">mjones@domain.com</mailbox>
+	</user_list>
+</response>
