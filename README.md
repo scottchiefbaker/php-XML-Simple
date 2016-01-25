@@ -1,6 +1,8 @@
 PHP XML Simple
 ==============
 
+[![Build Status](https://travis-ci.org/scottchiefbaker/php-XML-Simple.svg?branch=master)](https://travis-ci.org/scottchiefbaker/php-XML-Simple)
+
 Namespaced libary to parse XML into a hash data structure. Other implementations also do this, but ignore attributes. This library handles attributes correctly.
 
 This library is based on the Perl library: [XML::Simple](https://metacpan.org/pod/XML::Simple). Much care was taken to make the output of this PHP library mimic [XML::Simple](https://metacpan.org/pod/XML::Simple).
