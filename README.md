@@ -10,6 +10,6 @@ Usage:
 ```PHP
 require("/path/to/XML-Simple.php");
 
-$hash = \scottchiefbaker\xml\XMLin($filename);
-$hash = \scottchiefbaker\xml\XMLin($xml_string);
+$hash = \scottchiefbaker\xml::XMLin($filename);
+$hash = \scottchiefbaker\xml::XMLin($xml_string);
 ```
