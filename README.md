@@ -5,7 +5,7 @@ Namespaced libary to parse XML into a hash data structure. Other implementations
 
 This library is based on the Perl library: [XML::Simple](https://metacpan.org/pod/XML::Simple). Much care was taken to make the output of this PHP library mimic [XML::Simple](https://metacpan.org/pod/XML::Simple).
 
-**Note:** Requires [SimpleXML](http://php.net/manual/en/book.simplexml.php) support in your PHP.
+**Requires**: PHP 5.3 (for namespace support) and [SimpleXML](http://php.net/manual/en/book.simplexml.php) support in your PHP.
 
 Usage:
 ------
