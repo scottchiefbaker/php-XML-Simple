@@ -19,7 +19,7 @@ class xml {
     static function xml_to_hash($xml_obj) {
         if (is_object($xml_obj) && get_class($xml_obj) == 'SimpleXMLElement') {
             $has_children   = ($xml_obj->count() > 0);
-            $has_attributes = (!empty($xml_obj->attributes()));
+            $has_attributes = ($xml_obj->attributes());
             $node_name      = $xml_obj->getName();
             $attrs          = $xml_obj->attributes();
             $r              = array();
@@ -42,7 +42,7 @@ class xml {
                     // Island node (no children)
                     if (!$value->children()) {
                         if (isset($r[$key][0]) && is_array($r[$key])) {
-                            $r[$key] = array_merge($r[$key],[(string)$value]);
+                            $r[$key] = array_merge($r[$key],array((string)$value));
                         } elseif (isset($r[$key])) {
                             $r[$key] = array($r[$key],(string)$value);
                         } else {
