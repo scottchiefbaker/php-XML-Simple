@@ -6,10 +6,12 @@ class xml {
 	static function XMLin($str) {
 		if (is_file($str) && is_readable($str)) {
 			$xml = file_get_contents($str);
-			$obj = simplexml_load_string($xml);
+			$obj = @simplexml_load_string($xml);
+
 			return self::xml_to_hash($obj);
 		} elseif (is_string($str)) {
-			$obj = simplexml_load_string($str);
+			$obj = @simplexml_load_string($str);
+
 			return self::xml_to_hash($obj);
 		} else {
 			return null;
