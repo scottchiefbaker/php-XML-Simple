@@ -18,6 +18,44 @@ class xml {
 		}
 	}
 
+	static function XMLout($array, $rootElement = null, $xml = null) {
+		// @param array $array the array to be converted
+		// @param string? $rootElement if specified will be taken as root element, otherwise defaults to
+		//               <root>
+		// @param SimpleXMLElement? if specified content will be appended, used for recursion
+		// @return string XML version of $array
+		$_xml = $xml;
+
+		if ($_xml === null) {
+			$_xml = new \SimpleXMLElement($rootElement !== null ? $rootElement : '<root/>');
+		}
+
+		foreach ($array as $k => $v) {
+			$k = preg_replace("/\s+/","_",$k);
+
+			if (is_array($v)) { //nested array
+				// Numeric array
+				if (isset($v[0]) && !is_string($v)) {
+						foreach ($v as $i) {
+							if (is_array($i)) {
+								self::XMLout($i, $v, $_xml->addChild($k));
+							} else {
+								$_xml->addChild($k, $i);
+							}
+						}
+				// Assoc array
+				} else {
+					//print "v: $k\n";
+					self::XMLout($v, $k, $_xml->addChild($k));
+				}
+			} else {
+				$_xml->addChild($k, $v);
+			}
+		}
+
+		return $_xml->asXML();
+	}
+
 	static function xml_to_hash($xml_obj) {
 		if (is_object($xml_obj) && get_class($xml_obj) == 'SimpleXMLElement') {
 			$has_children   = ($xml_obj->count() > 0);
