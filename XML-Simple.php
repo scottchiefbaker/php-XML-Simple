@@ -109,7 +109,7 @@ class xml {
 				return $r;
 			}
 		} elseif (empty($xml_obj)) {
-			return false;
+			return null;
 		}
 	}
 
