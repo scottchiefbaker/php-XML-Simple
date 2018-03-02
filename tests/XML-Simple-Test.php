@@ -3,7 +3,9 @@
 $file = __DIR__ . "/../XML-Simple.php";
 require($file);
 
-class Core extends PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class Core extends TestCase
 {
     public function test_XML_Simple() {
 		$xml = "";
